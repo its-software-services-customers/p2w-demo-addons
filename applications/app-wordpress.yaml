@@ -17,6 +17,11 @@ spec:
         repoURL: https://github.com/its-software-services-customers/p2w-demo-addons.git
         targetRevision: "{{name}}" #Based on environment
         path: 'manifests/wordpress'
+        helm:
+          ignoreMissingValueFiles: true
+          valueFiles:
+            - values.yaml
+            - values-{{name}}.yaml
       destination:
         name: in-cluster
         namespace: wordpress
