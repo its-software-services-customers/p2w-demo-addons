@@ -1,0 +1,26 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: wtt-{{ .Values.envAlias }}-mariadb
+spec:
+  refreshInterval: 1m
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: k8s-secret-store      # name of the SecretStore (or kind specified)
+  target:
+    name: wtt-{{ .Values.envAlias }}-mariadb       # name of the k8s Secret to be created
+  data:
+  - secretKey: "mariadb-root-password" # For MariaDB
+    remoteRef:
+      key: initial-secret
+      property: MARIADB_ROOT_PASSWORD
+
+  - secretKey: "mariadb-password" # For MariaDB
+    remoteRef:
+      key: initial-secret
+      property: MARIADB_APP_PASSWORD
+
+  - secretKey: "mariadb-replication-password" # For MariaDB
+    remoteRef:
+      key: initial-secret
+      property: MARIADB_REPLICA_PASSWORD

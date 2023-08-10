@@ -1,0 +1,6 @@
+envAlias: production
+domainWordpress: epeaglepharma.com
+
+wordpress:
+  externalDatabase:
+    host: wtt-production-mysql

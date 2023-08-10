@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress-ing
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.allow-http: "true" #Wordpress will redirect to https internally
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+spec:
+  tls:
+    - hosts:
+      - {{ .Values.domainWordpress }}
+      secretName: wordpress-cert
+  rules:
+    - host: {{ .Values.domainWordpress }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wtt-{{ .Values.envAlias }}-wordpress
+                port:
+                  number: 443

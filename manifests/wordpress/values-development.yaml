@@ -1,0 +1,6 @@
+envAlias: development
+domainWordpress: web.epeaglepharma.com
+
+wordpress:
+  externalDatabase:
+    host: wtt-development-mysql

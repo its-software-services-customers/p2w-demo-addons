@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: wordpress
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          custom: "true"
+  template:
+    metadata:
+      name: 'wordpress-{{name}}'
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/its-software-services-customers/p2w-demo-addons.git
+        targetRevision: "{{name}}" #Based on environment
+        path: 'manifests/wordpress'
+      destination:
+        name: in-cluster
+        namespace: wordpress
+      syncPolicy:
+        automated:
+          selfHeal: false
+          prune: true
+        syncOptions:
+          - CreateNamespace=true

@@ -1,0 +1,26 @@
+apiVersion: external-secrets.io/v1beta1
+kind: ExternalSecret
+metadata:
+  name: wordpress-db-login
+spec:
+  refreshInterval: 1m
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: k8s-secret-store      # name of the SecretStore (or kind specified)
+  target:
+    name: wordpress-db-login       # name of the k8s Secret to be created
+  data:
+  - secretKey: "mysql-root-password" # For MariaDB
+    remoteRef:
+      key: initial-secret
+      property: MARIADB_ROOT_PASSWORD
+
+  - secretKey: "mysql-password" # For MariaDB
+    remoteRef:
+      key: initial-secret
+      property: MARIADB_APP_PASSWORD
+
+  - secretKey: "mariadb-password" # For MariaDB
+    remoteRef:
+      key: initial-secret
+      property: MARIADB_ROOT_PASSWORD
