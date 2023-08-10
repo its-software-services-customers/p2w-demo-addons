@@ -20,6 +20,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: wtt-{{ .Values.envAlias }}-wordpress
+                name: wordpress-{{ .Values.envAlias }}
                 port:
                   number: 443
