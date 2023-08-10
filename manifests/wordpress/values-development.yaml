@@ -3,4 +3,4 @@ domainWordpress: web.epeaglepharma.com
 
 wordpress:
   externalDatabase:
-    host: wtt-development-mysql
+    host: wordpress-development-mysql
