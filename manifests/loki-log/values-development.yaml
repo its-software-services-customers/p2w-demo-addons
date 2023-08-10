@@ -1,0 +1,11 @@
+domain: grafana-loki-np.epeaglepharma.com
+
+loki-stack:
+  grafana:
+    grafana.ini:
+      server:
+        root_url: grafana-loki-np.epeaglepharma.com
+    grafana.ini:
+      server:
+        root_url: https://grafana-loki-np.epeaglepharma.com
+        domain: grafana-loki-np.epeaglepharma.com

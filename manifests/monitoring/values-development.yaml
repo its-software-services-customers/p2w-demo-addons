@@ -1,0 +1,15 @@
+domain: grafana-k8s-np.epeaglepharma.com
+domain1: alm-np.epeaglepharma.com
+domain2: prom-np.epeaglepharma.com
+
+environment: development
+
+kube-prometheus-stack:
+  grafana:
+    grafana.ini:
+      server:
+        root_url: grafana-k8s-np.epeaglepharma.com
+    grafana.ini:
+      server:
+        root_url: https://grafana-k8s-np.epeaglepharma.com
+        domain: grafana-k8s-np.epeaglepharma.com
