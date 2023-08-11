@@ -14,7 +14,7 @@ spec:
     spec:
       project: "default"
       source:
-        repoURL: https://github.com/its-software-services-customers/p2w-demo-addons.git
+        repoURL: https://github.com/its-software-services-customers/p2w-epeagle-addons.git
         targetRevision: "{{name}}" #Based on environment
         path: 'manifests/loki-log'
         helm:
