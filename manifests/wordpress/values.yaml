@@ -5,7 +5,10 @@ wordpress:
   wordpressScheme: https
   wordpressUsername: admin
   existingSecret: 'wordpress-user-login'
-
+  
+  image:
+    tag: 6.3.0
+  
   readinessProbe:
     enabled: false
 
