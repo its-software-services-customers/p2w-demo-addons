@@ -3,7 +3,7 @@ kind: Certificate
 metadata:
   name: wordpress-cert-2
 spec:
-  secretName: wordpress-cert
+  secretName: wordpress-cert-2
   dnsNames:
     - {{ .Values.domainWordpress2 }}
     - www.{{ .Values.domainWordpress2 }}
