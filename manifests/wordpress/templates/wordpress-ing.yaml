@@ -11,9 +11,21 @@ spec:
   tls:
     - hosts:
       - {{ .Values.domainWordpress }}
+      - www.{{ .Values.domainWordpress }}
       secretName: wordpress-cert
   rules:
     - host: {{ .Values.domainWordpress }}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: wordpress-{{ .Values.envAlias }}
+                port:
+                  number: 443
+  
+    - host: www.{{ .Values.domainWordpress }}
       http:
         paths:
           - path: /

@@ -6,6 +6,7 @@ spec:
   secretName: wordpress-cert
   dnsNames:
     - {{ .Values.domainWordpress }}
+    - www.{{ .Values.domainWordpress }}
   issuerRef:
     name: lets-encrypt-issuer-prod
     kind: ClusterIssuer
