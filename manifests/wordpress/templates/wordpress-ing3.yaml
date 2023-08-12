@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wordpress-codecheck-ing
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    kubernetes.io/ingress.allow-http: "true" #Wordpress will redirect to https internally
+spec:
+  tls:
+    - hosts:
+      - {{ .Values.domainWordpress }}
+      - www.{{ .Values.domainWordpress }}
+      secretName: wordpress-cert
+  rules:
+    - host: {{ .Values.domainWordpress }}
+      http:
+        paths:
+          - path: /epeagle
+            pathType: Prefix
+            backend:
+              service:
+                name: codecheck-external-ip
+                port:
+                  number: 80
+  
+    - host: www.{{ .Values.domainWordpress }}
+      http:
+        paths:
+          - path: /epeagle
+            pathType: Prefix
+            backend:
+              service:
+                name: codecheck-external-ip
+                port:
+                  number: 80
