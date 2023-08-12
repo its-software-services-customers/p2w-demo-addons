@@ -1,6 +1,6 @@
 envAlias: production
 domainWordpress: epeaglepharma.com
-domainWordpress2: eager.wintech-thai.com
+domainWordpress2: eagle.wintech-thai.com
 
 wordpress:
   externalDatabase:
