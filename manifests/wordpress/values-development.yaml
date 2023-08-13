@@ -1,6 +1,6 @@
 envAlias: development
 domainWordpress: web.epeaglepharma.com
-domainWordpress2: eagle-dev.wintech-thai.com
+domainWordpress2: web.ep-eagle-pharma.com
 
 wordpress:
   externalDatabase:
