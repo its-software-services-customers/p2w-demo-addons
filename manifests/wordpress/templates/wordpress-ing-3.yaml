@@ -12,7 +12,7 @@ spec:
     - hosts:
       - {{ .Values.domainWordpress3 }}
       - www.{{ .Values.domainWordpress3 }}
-      secretName: wordpress-cert-2 #Intend to use invalid cert
+      secretName: wordpress-cert-3
   rules:
     - host: {{ .Values.domainWordpress3 }}
       http:
