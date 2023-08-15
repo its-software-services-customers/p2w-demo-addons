@@ -17,7 +17,7 @@ spec:
     - host: {{ .Values.domainWordpress3 }}
       http:
         paths:
-          - path: /abcxxx-will-remove
+          - path: /
             pathType: Prefix
             backend:
               service:
@@ -28,7 +28,7 @@ spec:
     - host: www.{{ .Values.domainWordpress3 }}
       http:
         paths:
-          - path: /abcxxx-will-remove
+          - path: /
             pathType: Prefix
             backend:
               service:
