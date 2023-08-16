@@ -1,7 +1,7 @@
 envAlias: development
 domainWordpress: web.epeagle-pharma.com
 domainWordpress2: web.ep-eagle-pharma.com
-domainWordpress3: web.chalam-kitchen.com
+domainWordpress3: web.epeaglepharma.com
 
 wordpress:
   externalDatabase:

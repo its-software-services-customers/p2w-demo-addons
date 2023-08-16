@@ -1,7 +1,7 @@
 envAlias: production
 domainWordpress: epeagle-pharma.com
 domainWordpress2: ep-eagle-pharma.com
-domainWordpress3: chalam-kitchen.com
+domainWordpress3: epeaglepharma.com
 
 wordpress:
   externalDatabase:
