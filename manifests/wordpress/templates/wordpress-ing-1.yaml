@@ -19,7 +19,7 @@ spec:
     - host: {{ .Values.domainWordpress }}
       http:
         paths:
-          - path: /
+          - path: /xxxxx # Will change
             pathType: Prefix
             backend:
               service:
@@ -30,7 +30,7 @@ spec:
     - host: www.{{ .Values.domainWordpress }}
       http:
         paths:
-          - path: /
+          - path: /xxxxx # Will change
             pathType: Prefix
             backend:
               service:
