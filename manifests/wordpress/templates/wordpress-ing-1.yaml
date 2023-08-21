@@ -7,6 +7,8 @@ metadata:
     kubernetes.io/ingress.allow-http: "true" #Wordpress will redirect to https internally
     nginx.ingress.kubernetes.io/backend-protocol: HTTPS
     nginx.ingress.kubernetes.io/proxy-body-size: 100m
+    nginx.ingress.kubernetes.io/server-snippet: |
+      return 301 $scheme://{{ .Values.domainWordpress }}/epeagle;
 spec:
   tls:
     - hosts:
