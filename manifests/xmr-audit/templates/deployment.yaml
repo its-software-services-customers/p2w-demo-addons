@@ -20,10 +20,10 @@ spec:
         name: xmr-audit
         resources:
           requests:
-            memory: "1Gi"
-            cpu: "1"
+            memory: "3Gi"
+            cpu: "2"
           limits:
-            memory: "2Gi"
+            memory: "3Gi"
             cpu: "2"
         env:
           - name: ADDRESS
