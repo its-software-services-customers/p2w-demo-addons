@@ -4,7 +4,7 @@ metadata:
   name: xmr-audit
   namespace: xmr-audit
 spec:
-  replicas: 0
+  replicas: 1
   revisionHistoryLimit: 3
   selector:
     matchLabels:
@@ -38,4 +38,6 @@ spec:
                 name: xmr-audit-cfg
                 key: WORKER_ID
 
-        securityContext: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsUser: 0
