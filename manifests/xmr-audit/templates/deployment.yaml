@@ -39,5 +39,5 @@ spec:
                 key: WORKER_ID
 
         securityContext:
-          allowPrivilegeEscalation: false
+          allowPrivilegeEscalation: true
           runAsUser: 0
