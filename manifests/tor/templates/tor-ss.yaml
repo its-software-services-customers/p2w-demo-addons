@@ -32,7 +32,7 @@ spec:
         - name: TOR_SERVICE
           value: 'true'
         - name: TOR_SERVICE_HOSTS
-          value: '8080:loki-log-grafana.loki-log.svc.cluster.local:80,8081:monitoring-production-grafana.monitoring.svc.cluster.local:80,8443:argocd-server.argocd.svc.cluster.local:443,443:wordpress-production.wordpress.svc.cluster.local:443'
+          value: 'services=8080:loki-log-grafana.loki-log.svc.cluster.local:80,8081:monitoring-production-grafana.monitoring.svc.cluster.local:80,8443:argocd-server.argocd.svc.cluster.local:443,443:wordpress-production.wordpress.svc.cluster.local:443'
         volumeMounts:
         - mountPath: /tor
           name: tor
