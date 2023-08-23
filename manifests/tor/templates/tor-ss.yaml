@@ -9,6 +9,14 @@ spec:
     matchLabels:
       app: tor
   serviceName: tor
+  volumeClaimTemplates:
+  - metadata:
+      name: tor
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 100Mi
   template:
     metadata:
       labels:
@@ -16,8 +24,6 @@ spec:
     spec:
       volumes:
       - name: home
-        emptyDir: {}
-      - name: tor
         emptyDir: {}
       - name: controller-scripts
         configMap:
