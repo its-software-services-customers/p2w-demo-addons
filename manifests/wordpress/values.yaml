@@ -1,6 +1,6 @@
 ### Wordpress ###
 wordpress:
-  enabled: false # Temporary disable it
+  enabled: true
   replicaCount: 1
   wordpressScheme: https
   wordpressUsername: admin
@@ -28,7 +28,7 @@ wordpress:
     existingSecret: wordpress-db-login
 
 mysql:
-  enabled: false # Temporary disable it
+  enabled: true
   auth:
     database: wordpress
     existingSecret: wordpress-db-login
