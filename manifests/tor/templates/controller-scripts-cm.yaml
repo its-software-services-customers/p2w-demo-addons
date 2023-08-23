@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: controller-scripts-cm
+  annotations:
+    checksum/script1: {{ .Files.Get "scripts/controller.bash" | sha256sum }}
+data:
+  controller.bash: |-
+{{ .Files.Get "scripts/controller.bash" | indent 4 }}

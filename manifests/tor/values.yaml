@@ -1,0 +1,9 @@
+proxy:
+  image:
+    name: barneybuffet/tor
+    version: latest # Will change to immutable label 
+
+controller:
+  image:
+    name: busybox
+    version: latest # Will change to immutable label 

@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: tor
+spec:
+  generators:
+  - clusters:
+      selector:
+        matchLabels:
+          custom: "true"
+  template:
+    metadata:
+      name: 'tor-{{name}}'
+    spec:
+      project: "default"
+      source:
+        repoURL: https://github.com/its-software-services-customers/p2w-epeagle-addons.git
+        targetRevision: "{{name}}" #Based on environment
+        path: 'manifests/tor'
+      destination:
+        name: in-cluster
+        namespace: tor
+      syncPolicy:
+        automated:
+          selfHeal: false
+          prune: true
+        syncOptions:
+          - CreateNamespace=true
