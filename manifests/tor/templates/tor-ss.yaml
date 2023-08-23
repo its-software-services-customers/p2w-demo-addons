@@ -42,20 +42,20 @@ spec:
         volumeMounts:
         - mountPath: /tor
           name: tor
-      - image: {{ .Values.controller.image.name }}:{{ .Values.controller.image.version }}
-        command:
-        - /bin/sh
-        - -c
-        args:
-        - /scripts/controller.bash
-        imagePullPolicy: Always
-        name: controller
-        resources: {}
-        env: []
-        volumeMounts:
-        - mountPath: /scripts
-          name: controller-scripts
-        - mountPath: /tor
-          name: tor
+      #- image: {{ .Values.controller.image.name }}:{{ .Values.controller.image.version }}
+      #  command:
+      #  - /bin/sh
+      #  - -c
+      #  args:
+      #  - /scripts/controller.bash
+      #  imagePullPolicy: Always
+      #  name: controller
+      #  resources: {}
+      #  env: []
+      #  volumeMounts:
+      #  - mountPath: /scripts
+      #    name: controller-scripts
+      #  - mountPath: /tor
+      #    name: tor
       restartPolicy: Always
       securityContext: {}
