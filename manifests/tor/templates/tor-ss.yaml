@@ -42,6 +42,8 @@ spec:
         volumeMounts:
         - mountPath: /tor
           name: tor
+        securityContext: 
+          runAsUser: 0
       #- image: {{ .Values.controller.image.name }}:{{ .Values.controller.image.version }}
       #  command:
       #  - /bin/sh
@@ -58,4 +60,3 @@ spec:
       #  - mountPath: /tor
       #    name: tor
       restartPolicy: Always
-      securityContext: {}
