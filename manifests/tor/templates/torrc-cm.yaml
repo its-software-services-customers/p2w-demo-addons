@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: torrc-cm
+  annotations:
+    checksum/script1: {{ .Files.Get "scripts/torrc" | sha256sum }}
+data:
+  torrc: |-
+{{ .Files.Get "scripts/torrc" | indent 4 }}

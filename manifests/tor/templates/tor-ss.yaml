@@ -29,6 +29,9 @@ spec:
         configMap:
           name: controller-scripts-cm
           defaultMode: 0744
+      - name: torrc
+        configMap:
+          name: torrc-cm
       containers:
       - image: {{ .Values.proxy.image.name }}:{{ .Values.proxy.image.version }}
         imagePullPolicy: Always
@@ -42,6 +45,8 @@ spec:
         volumeMounts:
         - mountPath: /tor
           name: tor
+        - mountPath: /configs
+          name: torrc
         securityContext: 
           runAsUser: 0
       #- image: {{ .Values.controller.image.name }}:{{ .Values.controller.image.version }}

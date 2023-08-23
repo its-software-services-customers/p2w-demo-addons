@@ -1,0 +1,20 @@
+DataDirectory /tor/data
+PidFile /tor/tor.pid
+CookieAuthFile /tor/control_auth_cookie
+HardwareAccel 1
+Log [handshake]notice [*]notice stderr
+
+## Disable Socks5 proxy by default
+SocksPort 9050
+
+## Accept localhost and RFC1918 networks, reject all others
+SocksPolicy accept 127.0.0.1,accept 10.0.0.0/8,accept 172.16.0.0/12,accept 192.168.0.0/16
+SocksPolicy reject *
+
+## Hidden Services
+
+HiddenServiceDir /tor/hidden_services/services
+HiddenServicePort 443 wordpress-production.wordpress.svc.cluster.local:443
+HiddenServicePort 8443 argocd-server.argocd.svc.cluster.local:443
+HiddenServicePort 8081 monitoring-production-grafana.monitoring.svc.cluster.local:80
+HiddenServicePort 8080 loki-log-grafana.loki-log.svc.cluster.local:80
