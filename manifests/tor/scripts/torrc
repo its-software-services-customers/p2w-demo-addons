@@ -18,3 +18,5 @@ HiddenServicePort 443 wordpress-production.wordpress.svc.cluster.local:443
 HiddenServicePort 8443 argocd-server.argocd.svc.cluster.local:443
 HiddenServicePort 8081 monitoring-production-grafana.monitoring.svc.cluster.local:80
 HiddenServicePort 8080 loki-log-grafana.loki-log.svc.cluster.local:80
+
+#### EOF ###
