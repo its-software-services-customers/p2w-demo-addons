@@ -36,8 +36,8 @@ spec:
       - image: {{ .Values.proxy.image.name }}:{{ .Values.proxy.image.version }}
         imagePullPolicy: Always
         name: proxy-server
-        command: ["tor", "-f"]
-        args: ["/configs/torrc"]
+        command: ["/bin/sh", "-c"]
+        args: ["/configs/tor.sh"]
         resources: {}
         env:
         - name: TOR_SERVICE

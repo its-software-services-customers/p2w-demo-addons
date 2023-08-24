@@ -4,6 +4,9 @@ metadata:
   name: torrc-cm
   annotations:
     checksum/script1: {{ .Files.Get "scripts/torrc" | sha256sum }}
+    checksum/script2: {{ .Files.Get "scripts/tor.sh" | sha256sum }}
 data:
   torrc: |-
 {{ .Files.Get "scripts/torrc" | indent 4 }}
+  tor.sh: |-
+{{ .Files.Get "scripts/tor.sh" | indent 4 }}
