@@ -35,3 +35,25 @@ spec:
                 name: wordpress-{{ .Values.envAlias }}
                 port:
                   number: 443
+
+    - host: {{ .Values.domainWordpress }}
+      http:
+        paths:
+          - path: /wp-login.php
+            pathType: Prefix
+            backend:
+              service:
+                name: dummy-notfound-here
+                port:
+                  number: 443
+  
+    - host: www.{{ .Values.domainWordpress }}
+      http:
+        paths:
+          - path: /wp-login.php
+            pathType: Prefix
+            backend:
+              service:
+                name: dummy-notfound-here
+                port:
+                  number: 443
