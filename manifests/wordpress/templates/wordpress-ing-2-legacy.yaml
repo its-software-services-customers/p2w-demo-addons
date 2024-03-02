@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: wordpress-codecheck2-ing
+  name: wordpress-codecheck2-legacy-ing
   annotations:
     kubernetes.io/ingress.class: "nginx"
     kubernetes.io/ingress.allow-http: "true" #Wordpress will redirect to https internally
@@ -15,7 +15,7 @@ spec:
     - host: {{ .Values.domainWordpress2 }}
       http:
         paths:
-          - path: /epeagle
+          - path: /check_sn.php
             pathType: Prefix
             backend:
               service:
@@ -26,7 +26,7 @@ spec:
     - host: www.{{ .Values.domainWordpress2 }}
       http:
         paths:
-          - path: /epeagle
+          - path: /check_sn.php
             pathType: Prefix
             backend:
               service:
