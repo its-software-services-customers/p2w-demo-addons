@@ -33,3 +33,26 @@ spec:
                 name: codecheck-external-ip
                 port:
                   number: 80
+
+    - host: {{ .Values.domainWordpress2 }}
+      http:
+        paths:
+          - path: /check_sn.php
+            pathType: Prefix
+            backend:
+              service:
+                name: codecheck-external-ip
+                port:
+                  number: 80
+  
+    - host: www.{{ .Values.domainWordpress2 }}
+      http:
+        paths:
+          - path: /check_sn.php
+            pathType: Prefix
+            backend:
+              service:
+                name: codecheck-external-ip
+                port:
+                  number: 80
+
